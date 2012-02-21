@@ -21,7 +21,7 @@ EM.run do
         begin
           data = JSON.parse http.response
           im.deliver msg.from, data['body']
-        rescue JSON::ParseError
+        rescue JSON::ParserError
           im.deliver msg.from, 'Error happened'
         end
       end

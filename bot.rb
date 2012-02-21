@@ -3,13 +3,14 @@ require 'xmpp4r-simple'
 require 'eventmachine'
 require 'em-http-request'
 require 'json'
+require './monkey'
 
-Jabber::debug = ENV['JABBER_DEBUG']
+Jabber::debug = true
 
 im = Jabber::Simple.new(ENV['JABBER_USER'], ENV['JABBER_PASSWORD'])
 im.accept_subscriptions = true
 
-uri = ENV['CALLBACK_URL'] || 'http://0.0.0.0:9292/callback'
+uri = ENV['CALLBACK_URL'] || 'http://0.0.0.0:5000/callback'
 
 EM.run do
   EM::PeriodicTimer.new(1) do

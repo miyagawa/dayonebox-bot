@@ -3,5 +3,7 @@ gem 'em-http-request', '~> 1.0.1'
 gem 'sinatra'
 gem 'thin'
 gem 'json'
+gem 'oauth'
+gem 'uuidtools'
 
 gem 'pry', :group => :development
